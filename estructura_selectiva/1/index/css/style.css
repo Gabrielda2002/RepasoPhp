@@ -1,0 +1,85 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+.padre{
+    /* border: 1px solid black; */
+    width: 30%; 
+    margin: 0 auto;
+    /* falta agregar el ancho y maximo de la pagina */
+    margin-top: 10%;
+    box-shadow: 1px -1px 10px;
+    background: #B7B7C1;
+
+
+}
+
+
+body{
+    background: #D3D4DE;
+    /* background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); */
+
+}
+
+.text{
+    margin-left: 10%;
+    margin-top: 4%;
+    margin-bottom: 1%;
+    font-size: 27px;
+    font-weight: bold;
+    text-transform: capitalize;
+
+
+
+}
+
+.hijo{
+    /* border: 1px solid black; */
+    width: 90%;
+    /* align-items: center; */
+    /* box-shadow: 1px -1px 10px; */
+    
+    
+    
+
+}
+.reset{
+    text-decoration: none;
+    color : black;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 90%;
+    transition: all 0.4s;
+
+}
+.reset:hover{
+    font-size: 16px;
+}
+
+.input1{
+    width: 40%;
+    margin-bottom: 4%;
+    background: none;
+    outline: none;
+    border: none;
+    margin: 1%;
+
+}
+.submit{
+    margin: 4%;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 3px;
+    padding-right: 3px;
+    background: #040F27;
+    color: white;
+    font-size: 90%;
+    transition: all 0.2s;
+}
+.submit:hover{
+    background: #D3D4DE;
+    border: none;
+    color: black;
+}
+

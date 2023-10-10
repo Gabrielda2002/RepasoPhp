@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+
+.padre{
+    border: 1px solid black;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    margin-top: 11%;
+    max-height: 1440px;
+    height: fit-content;
+}
+.hijo1, .hijo2,.hijo3,.hijo4,.hijo5,.hijo6{
+    border: 1px solid black;
+    width: 50%;
+    margin: 0 auto;
+}
+.hijo6{
+    /* background: black; */
+}
