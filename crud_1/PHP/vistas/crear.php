@@ -1,0 +1,1 @@
+<h1>Se a creado un nuevo estudiante</h1>
