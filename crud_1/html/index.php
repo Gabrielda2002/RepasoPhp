@@ -12,7 +12,6 @@
             }
       }
 ?>
-
 <html lang="en">
 <head>
       <meta charset="UTF-8">
@@ -22,6 +21,22 @@
 <body>
       <form action="" method="post" class="form"">
             <div class="padre">
+
+                  <div class="hijo13">
+                  <nav>
+                        <ul>
+                              <li id="accesoBarra">
+                              <a  id="textBarra"href="../PHP/index.php">Inicio</a>
+                              </li>
+                              <li id="accesoBarra">
+                              <a id="textBarra" href="../PHP/vistas/inicio.php">Listar</a>
+                              </li>
+                        </ul>
+                  </nav>
+                  </div>
+
+
+
                   <div class="hijo1">
                         <h3>
                               Registro estudiantes

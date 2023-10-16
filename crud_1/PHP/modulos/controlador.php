@@ -10,36 +10,47 @@
             return $resultado;
         }
         public function crear($NumDocApr, $typeDocApr, $name, $lastName1, $lastName2, $yearsOld, $emailInst, $emailPer, $phone, $adress, $genus){
-            $this->Estudiante->set("NumDocApr", $NumDocApr); // Corregido: "NumDoc" a "NumDocApr"
-            $this->Estudiante->set("typeDoc", $typeDocApr); // Corregido: "TipoDoc" a "typeDoc"
-            $this->Estudiante->set("name", $name); // Corregido: "Nombre" a "name"
-            $this->Estudiante->set("lastName1", $lastName1); // Corregido: "Apellido1" a "lastName1"
-            $this->Estudiante->set("lastName2", $lastName2); // Corregido: "Apellido2" a "lastName2"
-            $this->Estudiante->set("yearsOld", $yearsOld); // Corregido: "Edad" a "yearsOld"
-            $this->Estudiante->set("emailIns", $emailInst); // Corregido: "EmailInst" a "emailIns"
-            $this->Estudiante->set("emailPer", $emailPer); // Corregido: "EmailPer" a "emailPer"
-            // $this->Estudiante->set("fechaRegis", $date); // Este valor se asigna automáticamente en la clase Estudiante
-            $this->Estudiante->set("phone", $phone); // Corregido: "celular" a "phone"
-            $this->Estudiante->set("adress", $adress); // Corregido: "Direccion" a "adress"
-            $this->Estudiante->set("genus", $genus); // Corregido: "Sexo" a "genus"
+            $this->Estudiante->set("NumDocApr", $NumDocApr); 
+            $this->Estudiante->set("typeDoc", $typeDocApr); 
+            $this->Estudiante->set("name", $name); 
+            $this->Estudiante->set("lastName1", $lastName1); 
+            $this->Estudiante->set("lastName2", $lastName2); 
+            $this->Estudiante->set("yearsOld", $yearsOld); 
+            $this->Estudiante->set("emailIns", $emailInst); 
+            $this->Estudiante->set("emailPer", $emailPer); 
+            // $this->Estudiante->set("fechaRegis", $date); 
+            $this->Estudiante->set("phone", $phone); 
+            $this->Estudiante->set("adress", $adress); 
+            $this->Estudiante->set("genus", $genus); 
         
             $resultado = $this->Estudiante->crear();
             return $resultado;
         }
         
-        public function eliminar($NumDocApr){
-            $this->Estudiante->set("NumDoc", $NumDocApr);
+        public function eliminar($Id){
+            $this->Estudiante->set("Id", $Id);
             $this->Estudiante->eliminar();
         }
-        public function ver($NumDocApr){    
-            $this->Estudiante->set("NumDoc", $NumDocApr);
+        public function ver($Id){    
+            $this->Estudiante->set("Id", $Id);
             $this->Estudiante->ver();
         }
-        public function editar($NumDocApr){
-            $this->Estudiante->set("NumDoc", $NumDocApr);
-            $this->Estudiante->ver();
-            $this->Estudiante->editar();
+        public function editar($Id, $name, $lastName1, $lastName2, $yearsOld, $emailInst, $emailPer, $phone, $adress, $genus){
+            $this->Estudiante->setId($Id);
+            $this->Estudiante->set("name", $name);
+            $this->Estudiante->set("lastName1", $lastName1);
+            $this->Estudiante->set("lastName2", $lastName2);
+            $this->Estudiante->set("yearsOld", $yearsOld);
+            $this->Estudiante->set("emailIns", $emailInst);
+            $this->Estudiante->set("emailPer", $emailPer);
+            $this->Estudiante->set("phone", $phone);
+            $this->Estudiante->set("adress", $adress);
+            $this->Estudiante->set("genus", $genus);
+        
+            $resultado = $this->Estudiante->actualizar();
+            return $resultado;
         }
+        
 
     }
 

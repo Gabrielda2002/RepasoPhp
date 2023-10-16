@@ -11,13 +11,15 @@
 <body>
     <nav>
         <ul>
-            <li>
-                <a href="index.php">Inicio</a>
-                
-            </li>
             <LI>
                 <a href="../html/index.php">Registrar</a>
             </LI>
+            <li>
+                <a href="vistas/inicio.php">Listar</a>
+            </li>
+            <li id="accesoBar">
+                <a href="vistas/editar.php">Actualizar</a>
+            </li>
         </ul>
     </nav>
     <?php

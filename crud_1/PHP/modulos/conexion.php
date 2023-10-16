@@ -6,7 +6,7 @@
             private $db = "sena";
             private $conect;
             public function __construct(){
-                  $connectionString = "mysql:hos=".$this-> host.";dbname=".$this->db.";charset=utf8";
+                  $connectionString = "mysql:host=".$this-> host.";dbname=".$this->db.";charset=utf8";
                   try {
                         $this->conect=  new PDO($connectionString, $this->user, $this->password);
                         $this->conect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

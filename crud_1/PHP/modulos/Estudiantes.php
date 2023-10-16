@@ -2,6 +2,7 @@
     // aqui heredamos la clase conexion que contiene la conexion a la base de datos
     include_once ("conexion.php");
     class Estudiante extends Conexion{
+        private $Id;
         private $NumDocApr;
         private $typeDoc;
         private $name;
@@ -16,6 +17,13 @@
         private $genus;
 
 
+        public function setId($Id) {
+            $this->id = $Id;
+        }
+    
+        public function getId() {
+            return $this->Id;
+        }
         public function __construct(){
             $this->con = new Conexion();
 
@@ -68,47 +76,45 @@
 
 
         public function eliminar(){
-            $sql = "SELECT * FROM aprendices WHERE NumDoc = '{$this->NumDocApr}'";
+            $sql = "DELETE FROM aprendices WHERE Id = '{$this->Id}'";
             $this->con->consultaSimple($sql);
         }
-        public function ver(){
-            $sql = "SELECT * FROM aprendices WHERE NumDoc = :NumDoc LIMIT 1";
-            $stmt = $this->con->prepare($sql);
-            $stmt->bindParam(':NumDoc', $this->NumDocApr);
-            
-            try {
-                $stmt->execute();
-                $rows = $stmt->fetch(PDO::FETCH_ASSOC);
-        
-                if ($rows) {
-                    $this->NumDocApr = $rows['NumDoc'];
-                    $this->typeDoc = $rows['TipoDoc'];
-                    $this->name = $rows['Nombre'];
-                    $this->lastName1 = $rows['Apellido1'];
-                    $this->lastName2 = $rows['Apellido2'];
-                    $this->yearsOld = $rows['Edad'];
-                    $this->emailIns = $rows['EmailInst'];
-                    $this->emailPer = $rows['EmailPer'];
-                    $this->date = $rows['FechaRegis'];
-                    $this->phone = $rows['celular']; 
-                    $this->adress = $rows['Direccion'];
-                    $this->genus = $rows['Sexo'];
-                    return true;  // Si se encontró el registro
-                } else {
-                    return false;  // Si no se encontró el registro
-                }
-            } catch (PDOException $e) {
-                // Manejar errores de la base de datos
-                echo "Error: " . $e->getMessage();
-                return false;
+        public function ver() {
+            $sql = "SELECT * FROM aprendices WHERE Id = :Id LIMIT 1";
+            $params = array(':Id' => $this->Id);
+            $rows = $this->con->consultaPreparada($sql, $params);
+    
+            if ($rows) {
+                return $row = $rows[0];
+                
+            } else {
+                return null;
             }
         }
         
 
         public function actualizar(){
-            $sql = "UPDATE aprendices SET Nombre = '{$this->name}',  Apellido1 = '{$this->lastName1}', Apellido2 = '{$this->lastName2}', Edad = '{$this->yearsOld}', EmailInst = '{$this->emailIns}', EmailPer = '{$this->emailPer}', fechaRegis = NOW(), cX|elular =  '{$this->phone}', Direccion = '{$this->adress}', Sexo = '{$this->genus}' WHERE NumDoc = '{$this->numDocApr}'";
-
-            $this->con->consultaSimple($sql);
+            $sql = "UPDATE aprendices SET Nombre = :name,  Apellido1 = :lastName1, Apellido2 = :lastName2, Edad = :yearsOld, EmailInst = :emailIns, EmailPer = :emailPer, fechaRegis = :fechaRegis, celular =  :phone, Direccion = :direccion, Sexo = :genus WHERE Id = :Id";
+            $params = array(
+                ':Id' => $this->Id,
+                ':name' => $this->name,
+                ':lastName1' => $this->lastName1,
+                ':lastName2' => $this->lastName2,
+                ':yearsOld' => $this->yearsOld,
+                ':emailIns' => $this->emailIns,
+                ':emailPer' => $this->emailPer,
+                ':genus' => $this->genus,
+                ':phone' => $this->phone,
+                ':direccion' => $this->adress,
+                ':fechaRegis' => date('Y-m-d H:i:s')
+            );
+            try {
+                $this->con->consultaPreparada($sql, $params);
+                return true;
+            } catch (PDOException $th) {
+                echo "Error".$th->getMessage();
+                return false;
+            }
         }
     }
 ?>
