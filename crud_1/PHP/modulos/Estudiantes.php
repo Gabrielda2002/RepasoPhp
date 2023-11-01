@@ -108,7 +108,7 @@
                 ':direccion' => $this->adress,
                 ':fechaRegis' => date('Y-m-d H:i:s')
             );
-            try {
+            try {   
                 $this->con->consultaPreparada($sql, $params);
                 return true;
             } catch (PDOException $th) {
