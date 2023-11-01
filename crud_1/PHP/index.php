@@ -20,6 +20,9 @@
             <li id="accesoBar">
                 <a href="vistas/editar.php">Actualizar</a>
             </li>
+            <li>
+                <a href="vistas/consultaFicha.php">Cosulta por ficha</a>
+            </li>
         </ul>
     </nav>
     <?php

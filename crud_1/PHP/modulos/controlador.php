@@ -53,6 +53,10 @@
         
 
     }
+    public function consultaFicha($fichaId){
+        $this->Estudiante->consultaFicha($fichaId);
+
+    }
 
 
 

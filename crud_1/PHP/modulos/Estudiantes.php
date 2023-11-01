@@ -116,5 +116,19 @@
                 return false;
             }
         }
+        public function consultaFicha($fichaId){
+            $sql = "SELECT aprendices.Nombre, aprendices.Apellido1, aprendices.NumDoc, apreficha.Estado
+                FROM aprendices
+                INNER JOIN apreficha ON aprendices.NumDoc = apreficha.NUMDOCAPRE
+                INNER JOIN fichas ON apreficha.NUMFICHA = fichas.Numficha
+                WHERE fichas.Numficha =:fichaId";
+
+                $params = array(
+                    ':fichaId' => $this->$fichaId
+                );
+                $resultado = $this->con->consultaPreparada($sql, $params);
+                return $resultado;
+
+        }
     }
 ?>
