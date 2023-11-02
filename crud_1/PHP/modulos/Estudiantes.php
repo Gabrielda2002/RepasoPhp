@@ -124,7 +124,7 @@
                 WHERE fichas.Numficha =:fichaId";
 
                 $params = array(
-                    ':fichaId' => $this->$fichaId
+                    ':fichaId' =>$fichaId
                 );
                 $resultado = $this->con->consultaPreparada($sql, $params);
                 return $resultado;

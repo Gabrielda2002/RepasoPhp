@@ -19,9 +19,9 @@
             <LI>
                 <a href="../../html/index.php">Registrar</a>
             </LI>
-            <li>
+            <!-- <li>
                 <a href="vistas/inicio.php">Listar</a>
-            </li>
+            </li> -->
         </ul>
     </nav>
         <!-- tabla de registros de la base de datos -->

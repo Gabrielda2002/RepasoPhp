@@ -52,10 +52,9 @@
         }
         
 
-    }
-    public function consultaFicha($fichaId){
-        $this->Estudiante->consultaFicha($fichaId);
-
+        public function consultaFicha($fichaId){
+            $this->Estudiante->consultaFicha($fichaId);
+        }
     }
 
 

@@ -16,7 +16,7 @@
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
+      <title>Crear Registro</title>
 </head>
 <body>
       <form action="" method="post" class="form"">
@@ -34,9 +34,6 @@
                         </ul>
                   </nav>
                   </div>
-
-
-
                   <div class="hijo1">
                         <h3>
                               Registro estudiantes
