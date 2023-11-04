@@ -75,7 +75,7 @@
         
 
 
-        public function eliminar(){
+        public function eliminar($Id){
             $sql = "DELETE FROM aprendices WHERE Id = '{$this->Id}'";
             $this->con->consultaSimple($sql);
         }
@@ -84,6 +84,8 @@
             $params = array(':Id' => $this->Id);
             $rows = $this->con->consultaPreparada($sql, $params);
     
+            // para verificar que los datos se estan enviando correctamente a metodo
+            // var_dump($rows);
             if ($rows) {
                 return $row = $rows[0];
                 
@@ -93,21 +95,23 @@
         }
         
 
-        public function actualizar(){
-            $sql = "UPDATE aprendices SET Nombre = :name,  Apellido1 = :lastName1, Apellido2 = :lastName2, Edad = :yearsOld, EmailInst = :emailIns, EmailPer = :emailPer, fechaRegis = :fechaRegis, celular =  :phone, Direccion = :direccion, Sexo = :genus WHERE Id = :Id";
+        public function actualizar($Id, $name, $lastName1, $lastName2, $genus, $emailIns, $emailPer, $phoneNumber, $yearsOld, $address) {
+            $sql = "UPDATE aprendices SET Nombre = :name, Apellido1 = :lastName1, Apellido2 = :lastName2, Edad = :yearsOld, EmailInst = :emailIns, EmailPer = :emailPer, fechaRegis = :fechaRegis, celular = :phone, Direccion = :direccion, Sexo = :genus WHERE Id = :Id";
+        
             $params = array(
-                ':Id' => $this->Id,
-                ':name' => $this->name,
-                ':lastName1' => $this->lastName1,
-                ':lastName2' => $this->lastName2,
-                ':yearsOld' => $this->yearsOld,
-                ':emailIns' => $this->emailIns,
-                ':emailPer' => $this->emailPer,
-                ':genus' => $this->genus,
-                ':phone' => $this->phone,
-                ':direccion' => $this->adress,
+                ':Id' => $Id,
+                ':name' => $name,
+                ':lastName1' => $lastName1,
+                ':lastName2' => $lastName2,
+                ':yearsOld' => $yearsOld,
+                ':emailIns' => $emailIns,
+                ':emailPer' => $emailPer,
+                ':genus' => $genus,
+                ':phone' => $phoneNumber,
+                ':direccion' => $address,
                 ':fechaRegis' => date('Y-m-d H:i:s')
             );
+        
             try {   
                 $this->con->consultaPreparada($sql, $params);
                 return true;
@@ -116,6 +120,7 @@
                 return false;
             }
         }
+        
         public function consultaFicha($fichaId){
             $sql = "SELECT aprendices.Nombre, aprendices.Apellido1, aprendices.NumDoc, apreficha.Estado
                 FROM aprendices

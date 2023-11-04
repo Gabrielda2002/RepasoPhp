@@ -1,22 +1,29 @@
 <?php
-    include_once('../modulos/controlador.php');
+include_once('../modulos/controlador.php');
+
+if(isset($_POST['editar'])) {
+    $id = $_POST['Id'];
+    $name = $_POST['name'];
+    $lastName1 = $_POST['lastname1'];
+    $lastName2 = $_POST['lastname2'];
+    $genus = $_POST['genus'];
+    $emailIns = $_POST['emailins'];
+    $emailPer = $_POST['emailper'];
+    $phoneNumber = $_POST['phonenumber'];
+    $yearsOld = $_POST['yearsold'];
+    $address = $_POST['address'];
+    
+    // Crea un objeto del controlador
     $controlador = new ControladorEstudiante();
 
-    if(isset($_POST['editar'])){
-        $Id = $_POST['Id'];
-        $NumDoc = $_POST['NumDoc'];
-        $typeDoc = $_POST['typeDoc'];
-        $name = $_POST['name'];
-        $lastName1 = $_POST['lastName1'];
-        $lastName2 = $_POST['lastName2'];
-        $yearsOld = $_POST['yearsOld'];
-        $emailInst = $_POST['emailInst'];
-        $emailPer = $_POST['emailPer'];
-        $phone = $_POST['phone'];
-        $adress = $_POST['adress'];
-        $genus = $_POST['genus'];
+    // Llama al método actualizar del controlador con los argumentos adecuados
+    $resultado = $controlador->editar($id, $name, $lastName1, $lastName2, $genus, $emailIns, $emailPer, $phoneNumber, $yearsOld, $address);
 
-        $controlador->editar($Id, $NumDoc, $typeDoc, $name, $lastName1, $lastName2, $yearsOld, $emailInst, $emailPer, $phone, $adress, $genus);
-        header('Location: ../index.php');
+    if($resultado) {
+        echo "Estudiante actualizado correctamente.";
+    } else {
+        echo "Error al actualizar el estudiante.";
     }
+}
+
 ?>

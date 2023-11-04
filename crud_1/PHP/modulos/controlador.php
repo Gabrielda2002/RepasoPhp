@@ -29,27 +29,29 @@
         
         public function eliminar($Id){
             $this->Estudiante->set("Id", $Id);
-            $this->Estudiante->eliminar();
+            $this->Estudiante->eliminar($Id);
         }
         public function ver($Id){    
             $this->Estudiante->set("Id", $Id);
-            $this->Estudiante->ver();
+            return $this->Estudiante->ver();
         }
-        public function editar($Id, $name, $lastName1, $lastName2, $yearsOld, $emailInst, $emailPer, $phone, $adress, $genus){
+        public function editar($Id, $name, $lastName1, $lastName2, $genus, $emailIns, $emailPer, $phoneNumber, $yearsOld, $address){
+            var_dump($Id, $name, $lastName1, $lastName2, $genus, $emailIns, $emailPer, $phoneNumber, $yearsOld, $address);
             $this->Estudiante->setId($Id);
             $this->Estudiante->set("name", $name);
             $this->Estudiante->set("lastName1", $lastName1);
             $this->Estudiante->set("lastName2", $lastName2);
             $this->Estudiante->set("yearsOld", $yearsOld);
-            $this->Estudiante->set("emailIns", $emailInst);
+            $this->Estudiante->set("emailIns", $emailIns);
             $this->Estudiante->set("emailPer", $emailPer);
-            $this->Estudiante->set("phone", $phone);
-            $this->Estudiante->set("adress", $adress);
+            $this->Estudiante->set("phone", $phoneNumber);
+            $this->Estudiante->set("adress", $address);
             $this->Estudiante->set("genus", $genus);
         
-            $resultado = $this->Estudiante->actualizar();
+            $resultado = $this->Estudiante->actualizar($Id, $name, $lastName1, $lastName2, $genus, $emailIns, $emailPer, $phoneNumber, $yearsOld, $address);
             return $resultado;
         }
+        
         
 
         public function consultaFicha($fichaId){
