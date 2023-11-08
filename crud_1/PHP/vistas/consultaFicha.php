@@ -6,33 +6,53 @@
     <link rel="stylesheet" href="../../css/style_query.css">
 </head>
 <body>
-    <div class="padre">
+    
         <nav>
-            <ul>
-                <LI>
-                    <a href="../html/index.php">Registrar</a>
-                </LI>
-                <li>
-                    <a href="inicio.php">Listar</a>
-                </li>
-                <li id="accesoBar">
-                    <a href="vistas/editar.php">Actualizar</a>
-                </li>
-                <li>
-                    <a href="../index.php">Inicio</a>
-                </li>
-            </ul>
+        <button id="boton" class="singButtom">
+        <span>
+        Registrar
+        </span>
+    </button>
+    <script>
+        document.getElementById("boton").onclick = function(){
+            window.location.href = "../../html/index.php";
+        }
+    </script>
+    <button id="boton2" class="listButtom">
+        <span>
+        Listar
+        </span>
+    </button>
+    <script>
+        document.getElementById("boton2").onclick = function(){
+            window.location.href = "inicio.php";
+        }
+    </script>
+    <button id="boton3" class="queryButtom">
+        <span>
+        Inicio
+        </span>
+    </button>
+    <script>
+        document.getElementById("boton3").onclick = function(){
+            window.location.href = "../index.php";
+        }
+    </script>
         </nav>
-
-        <form action="" method="post">
+        <form action="" method="post" class="form-container">
+            <div class="padre">
                 <div class="hijo2">
+                    <p id="text">
+                    Ingrese el Numero de ficha que desea consultar
+                    </p>
                     <label for="">
-                        Ingrese el Numero de ficha que desea consultar
-                        <input type="number" name="fichaId" id="" value="Ficha">
+                        <div id="imput-container">
+                            <input type="number" name="fichaId" id="imput" value="Ficha" required placeholder="Ingrese el numero de ficha">
+                        </div>
                     </label>
                 </div>
                 <div class="hijo3">
-                    <input type="submit" name="consultar" value="consultar" id="">
+                    <input type="submit" name="consultar" value="consultar" id="submit">
                 </div>
                 <div class="hijo4">
                     <!-- agregando script de php para hacer la consulta en la base de datos -->
@@ -45,18 +65,26 @@
                         $resultado = $estudiante->consultaFicha($fichaId);
 
                         ?>
-                        <table>
+                        <table class="table-container">
                             <th id="encabezado">
-                                Nombre
+                                <p id="text">
+                                    Nombre
+                                </p>
                             </th>
                             <th id="encabezado">
-                                Apellido
+                                <p id="text">
+                                    Apellido
+                                </p>
                             </th>
                             <th id="encabezado">
-                                NumeroDoc
+                                <p id="text">
+                                    NumeroDoc
+                                </p>
                             </th>
                             <th id="encabezado">
-                                Estado
+                                <p id="text">
+                                    Estado
+                                </p>
                             </th>
                         <?php
 
@@ -64,10 +92,10 @@
                         ?>
                             <!-- echo "Nombre: ". $row['Nombre']; -->
                             <tr>
-                                <td><?php echo $row['Nombre'];  ?></td> 
-                                <td><?php echo $row['Apellido1'];  ?></td>
-                                <td><?php echo $row['NumDoc'];  ?></td>
-                                <td><?php echo $row['Estado'];  ?></td>
+                                <td id="data"><?php echo $row['Nombre'];  ?></td> 
+                                <td id="data"><?php echo $row['Apellido1'];  ?></td>
+                                <td id="data"><?php echo $row['NumDoc'];  ?></td>
+                                <td id="data"><?php echo $row['Estado'];  ?></td>
                                 
                             </tr>
                             <!-- script para cerrar las llaves del if y el foreach -->
@@ -79,9 +107,8 @@
                     
                     </table>
                 </div>
-                
+            </div>
         </form>
-    </div>
 
 </body>
-</html>=
+</html>

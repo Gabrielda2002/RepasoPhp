@@ -13,78 +13,114 @@
     ?>
     <div class="padre">
     <nav>
-        <ul>
-            <li>
-                <a href="../index.php">Inicio</a>
-            </li>
-            <LI>
-                <a href="../../html/index.php">Registrar</a>
-            </LI>
-            <!-- <li>
-                <a href="vistas/inicio.php">Listar</a>
-            </li> -->
-        </ul>
+    <button id="boton" class="singButtom">
+        <span>
+        Inicio
+        </span>
+    </button>
+    <script>
+        document.getElementById("boton").onclick = function(){
+            window.location.href = "../index.php";
+        }
+    </script>
+    <button id="boton2" class="listButtom">
+        <span>
+        Registrar
+        </span>
+    </button>
+    <script>
+        document.getElementById("boton2").onclick = function(){
+            window.location.href = "../../html/index.php";
+        }
+    </script>
     </nav>
         <!-- tabla de registros de la base de datos -->
-        <table>
-        <th id="encabezado">
-                Id_Usuario
+        <table class="table-container">
+        <th id="encabezado" class="colum-table">
+                <p id="text">
+                    Id_Usuario
+                </p>
+            </th>
+            
+            <th id="encabezado">
+                <p id="text">
+                    Nombre
+                </p>
             </th>
             <th id="encabezado">
-                Nombre
+                <p id="text">
+                    Primer Apellido
+                </p>
             </th>
             <th id="encabezado">
-                Primer Apellido
+                <p id="text">
+                    Segundo Apellido
+                </p>
             </th>
             <th id="encabezado">
-                Segundo Apellido
+                <p id="text">
+                    Edad
+                </p>
             </th>
             <th id="encabezado">
-                Edad
+                <p id="text">
+                    Genero
+                </p>
             </th>
             <th id="encabezado">
-                Genero
+                <p id="text">
+                    Numero Celular
+                </p>
             </th>
             <th id="encabezado">
-                Numero Celular
+                <p id="text">
+                    Correo Institucional
+                </p>
             </th>
             <th id="encabezado">
-                Correo Institucional
+                <p id="text">
+                    Correo Personal
+                </p>
             </th>
             <th id="encabezado">
-                Correo Personal
+                <p id="text">
+                    Direccion
+                </p>
             </th>
             <th id="encabezado">
-                Direccion
+                <p id="text">
+                    Tipo de documento
+                </p>
             </th>
             <th id="encabezado">
-                Tipo de documento
+                <p id="text">
+                    Numero de documento
+                </p>
             </th>
             <th id="encabezado">
-                Numero de documento
-            </th>
-            <th id="encabezado">
-                Acciones
+                <p id="text">
+                    Acciones
+                </p>
             </th>
             
             <?php
                 foreach ($resultado as $row){
             ?>
             <tr>
-                <td><?php  echo $row['Id']; ?></td>
-                <td><?php echo $row['Nombre'];  ?></td>
-                <td><?php echo $row['Apellido1'];  ?></td>
-                <td><?php echo $row['Apellido2'];  ?></td>
-                <td><?php echo $row['Edad'];  ?></td>
-                <td><?php echo $row['Sexo'];  ?></td>
-                <td><?php echo $row['celular'];  ?></td>
-                <td><?php echo $row['EmailInst'];  ?></td>
-                <td><?php echo $row['EmailPer'];  ?></td>
-                <td><?php echo $row['Direccion'];  ?></td>
-                <td><?php echo $row['TipoDoc'];  ?></td>
-                <td><?php echo $row['NumDoc'];  ?></td>
-                <td> <a href="editar.php?Id=<?php echo $row['Id'];  ?>">Editar</a></td>
-                <td><a href="eliminar.php?Id=<?php echo $row['Id'];  ?>" onclick="return confirm('Estas seguro que deseas eliminar el registro?')">Eliminar</a></td>
+                <td id="data"><?php  echo $row['Id']; ?></td>
+                <td id="data"><?php echo $row['Nombre'];  ?></td>
+                <td id="data"><?php echo $row['Apellido1'];  ?></td>
+                <td id="data"><?php echo $row['Apellido2'];  ?></td>
+                <td id="data"><?php echo $row['Edad'];  ?></td>
+                <td id="data"><?php echo $row['Sexo'];  ?></td>
+                <td id="data"><?php echo $row['celular'];  ?></td>
+                <td id="data"><?php echo $row['EmailInst'];  ?></td>
+                <td id="data"><?php echo $row['EmailPer'];  ?></td>
+                <td id="data"><?php echo $row['Direccion'];  ?></td>
+                <td id="data"><?php echo $row['TipoDoc'];  ?></td>
+                <td id="data"><?php echo $row['NumDoc'];  ?></td>
+                <td id="data"> <a href="editar.php?Id=<?php echo $row['Id'];  ?>">Editar</a></td>
+                <td id="data"><a href="eliminar.php?Id=<?php echo $row['Id'];  ?>" onclick="return confirm('Estas seguro que deseas eliminar el registro?')">Eliminar</a></td>
             </tr>
             <?php } ?>
         </table>

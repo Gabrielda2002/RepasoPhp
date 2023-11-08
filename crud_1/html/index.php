@@ -21,14 +21,26 @@
 </head>
 <body>
       <nav>
-            <ul>
-                  <li id="accesoBarra">
-                        <a  id="textBarra"href="../PHP/index.php">Inicio</a>
-                        </li>
-                        <li id="accesoBarra">
-                        <a id="textBarra" href="../PHP/vistas/inicio.php">Listar</a>
-                  </li>
-            </ul>
+      <button id="boton" class="singButtom">
+        <span>
+        Inicio
+        </span>
+    </button>
+    <script>
+        document.getElementById("boton").onclick = function(){
+            window.location.href = "../PHP/index.php";
+        }
+    </script>
+    <button id="boton2" class="listButtom">
+        <span>
+        Listar
+        </span>
+    </button>
+    <script>
+        document.getElementById("boton2").onclick = function(){
+            window.location.href = "../PHP/vistas/inicio.php";
+        }
+    </script>
       </nav>
       <form action="" method="post" class="form-container">
             <div class="padre">
