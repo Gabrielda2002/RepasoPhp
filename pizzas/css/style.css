@@ -1,25 +1,77 @@
 *{
     margin: 0;
     padding: 0;
-
 }
 
-
-.padre{
-    border: 1px solid black;
-    width: 100%;
+/* .form-container {
+    
+} */
+.form-container{
+    /* border: 1px solid black; */
+    width: 450px;
     max-width: 1440px;
     margin: 0 auto;
     box-sizing: border-box;
-    margin-top: 11%;
+    /* margin-top: 11%; */
     max-height: 1440px;
     height: fit-content;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.hijo1, .hijo2,.hijo3,.hijo4,.hijo5,.hijo6{
-    border: 1px solid black;
-    width: 50%;
+.padre {
+    width: 400px;
+    height: fit-content;
     margin: 0 auto;
 }
-.hijo6{
-    /* background: black; */
+.hijo1, .hijo2,.hijo3,.hijo4,.hijo5,.hijo6{
+    /* border: 1px solid black; */
+    /* width: 50%; */
+    margin: 0 auto;
+    text-align: center;
+}
+
+#check{
+    background: #083D77;
+}
+
+select {
+    border: none;
+    border-bottom: 1px solid black;
+}
+.boton{
+    padding: 10px 15px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border-radius: 20px;
+  border: 0 !important;
+  outline: 0 !important;
+  background: teal;
+  color: white;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.reset{
+    padding: 10px 15px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border-radius: 20px;
+  border: 0 !important;
+  outline: 0 !important;
+  background: teal;
+  color: white;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  text-decoration: none;
+}
+.hijo6 {
+    border: 1px solid;
+    border-radius: 10px;
+    background: #e6e2e2;
+}
+
+label, select{
+    color: #81868b;
+}
+.error{
+    background-color: #b46e6e;
 }

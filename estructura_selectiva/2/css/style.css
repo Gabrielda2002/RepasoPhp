@@ -1,3 +1,12 @@
+.colors{
+    --color-main: #323232;
+    --input-focus: #2d8cf0;
+  --font-color: #323232;
+  --font-color-sub: #666;
+  --bg-color: #fff;
+  --bg-color-alt: #666;
+  --main-color: #323232;
+}
 *{
     margin: 0;
     padding: 0;
@@ -5,9 +14,9 @@
 }
 
 
-.padre{
-    border: 1px solid black;
-    width: 100%;
+form{
+    /* border: 1px solid black; */
+    width: 450px;
     max-width: 1440px;
     margin: 0 auto;
     box-sizing: border-box;
@@ -15,8 +24,65 @@
     max-height: 1440px;
     height: fit-content;
 }
-.hijo1, .hijo2,.hijo3,.hijo4{
-    border: 1px solid black;
-    width: 50%;
+
+.padre{
+    width: 400px;
+    /* border: 1px solid black; */
     margin: 0 auto;
+    padding: 20px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  /* -webkit-backface-visibility: hidden; */
+  /* backface-visibility: hidden; */
+    background: lightgrey;
+    gap: 20px;
+    border-radius: 5px;
+    border: 2px solid #323232;
+    box-shadow: 4px 4px #323232;
+
+}
+.hijo1, .hijo2,.hijo3,.hijo4{
+    /* border: 1px solid black; */
+    margin: 0 auto;
+    text-align: center;
+}
+.inputScore{
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid #323232;
+    background: #fff;
+    justify-content: center;
+    align-items: center;
+    color: #323232;
+    padding: 5px 10px;
+    box-shadow: 4px 4px #323232;
+
+}
+.genero{
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid #323232;
+    background: #fff;
+    justify-content: center;
+    align-items: center;
+    color: #323232;
+    padding: 5px 10px;
+    box-shadow: 4px 4px #323232;
+}
+.submit{
+    margin: 20px 0 20px 0;
+  width: 120px;
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid #323232;
+  background-color: #fff;
+  box-shadow: 4px 4px #323232;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--font-color);
+  cursor: pointer;
 }

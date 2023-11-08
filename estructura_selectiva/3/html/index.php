@@ -2,53 +2,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Estructura selectiva 3</title>
+    <link rel="stylesheet" href="../css/style3.css">
 </head>
 <body>
-    <form action="" method="post">
+    <form action="" class="form-container" method="post">
         <div class="padre">
             <div class="hijo1">
-                <h5>
+                <p class="text">
                     Calcular monto
-                </h5>
+                </p>
             </div>
             <div class="hijo2">
-                <label for="" class="text">
-                    Por favor seleccione su rol.
+                <label for="" class="">
+                    <p class="text-select">
+                        Por favor seleccione su rol:
+                    </p>
+                    <div class="select-container">
                     <select name="rol" id="rol" required>
                         <option value="seleccione">Seleccione</option>
                         <option value="Administrador">Administrador</option>
                         <option value="Contador">Contador</option>
                         <option value="Empleado">Empleado</option>
                     </select>
+                    </div>
                 </label>
             </div>
             <div class="hijo3">
                 <label for="" class="text">
-                    Ingrese los años que lleva en la emporesa
-                    <input type="number" name="years" required class="year">
+                    <input type="number" name="years" required class="year" placeholder="Ingrese su edad">
                 </label>
             </div>
             <div class="hijo4">
                 <input type="submit" class="submit">
             </div>
-            <div class="hijo4">
 
-            <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="" method="post">
-        <div class="padre">
-            <!-- ... (código del formulario) ... -->
-            <div class="hijo4">
-                <input type="submit" class="submit">
-            </div>
-            <div class="hijo4">
+            <div class="hijo5">
                 <?php
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $rol = $_POST["rol"];
@@ -76,11 +65,7 @@
                 }
                 ?>
             </div>
-        </div>
     </form>
-</body>
-</html>
-
-            </div>
+</div>
 </body>
 </html>

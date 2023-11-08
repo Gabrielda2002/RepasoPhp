@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-10-2023 a las 00:33:28
+-- Tiempo de generación: 08-11-2023 a las 01:58:43
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 7.4.29
 
@@ -60,6 +60,7 @@ INSERT INTO `apreficha` (`NUMDOCAPRE`, `NUMFICHA`, `Estado_Matrícula`, `Fecha_i
 --
 
 CREATE TABLE `aprendices` (
+  `Id` int(11) NOT NULL,
   `NumDoc` double NOT NULL,
   `TipoDoc` varchar(100) DEFAULT NULL,
   `Nombre` varchar(100) NOT NULL,
@@ -79,18 +80,19 @@ CREATE TABLE `aprendices` (
 -- Volcado de datos para la tabla `aprendices`
 --
 
-INSERT INTO `aprendices` (`NumDoc`, `TipoDoc`, `Nombre`, `Apellido1`, `Apellido2`, `Edad`, `EmailInst`, `EmailPer`, `Sexo`, `Telfijo`, `celular`, `Direccion`, `FechaRegis`) VALUES
-(1005040452, 'Cedula de ciudadania', 'Gabriel', 'Duarte', 'Arias', '21', 'duartearias2002@gmail.com', 'duartearias2002@gmail.com', '56 tipos de gays', 0, 573025965432, 'aereoupuadba', '2023-10-16 00:28:16'),
-(1289564589, 'T.I', 'Valentina', 'González ', 'Pérez', '17', 'valenpe@sena.edu.co', 'jahikole@hotmal.com', 'Femenino', 3878895634, 3545758951, 'Ospina perez calle 30', ''),
-(1456785689, 'C.C', 'Emiliano', 'Rodríguez ', 'García', '27', 'Emigar@sena.edu.co', 'Lensoigo@gmail.com', 'Masculino', 8967458967, 3567890562, 'El gramalote', ''),
-(1989765809, 'C.C', 'Pepiyo', 'Lasques ', 'Vijamin', '23', 'VijaminPe@sena.edu.co', 'Lasquespeyo@gmail.com', 'Masculino', 2546789092, 3567765589, 'Calle 8 av 7 Barrio Buena ventura', ''),
-(6789563489, 'C.E', 'Diego', 'Sánchez', 'Ramírez', '20', 'diegosan@sena.edu.co', 'jakomeli@gmail.com', 'Masculino', 6789563412, 3889563412, 'Calle 9 Av4 Cuatro de mayo', ''),
-(7655828921, 'C.C', 'Santiago', 'Hernández', 'Tomar', '21', 'santiaher@sena.edu.co', 'Hersantiar@gmail.com', 'Masculino', 3456893467, 4589562367, 'Cruces del tamarindo Calle 8', ''),
-(7889672433, 'C.C', 'Regina', 'García', 'Pérez', '20', 'Reggar@sena.edu.co', 'lapapota@gmail.com', 'Femenino', 6789452389, 3990783476, 'Los patios', ''),
-(8967567890, 'C.C', 'Leonardo', 'Ramírez', 'Cruz', '25', 'LeoRam@sena.edu.co', 'lolcnireloyu@gmail.com', 'Masculino', 7890567845, 3789674512, 'Sanata ana Los patios', ''),
-(9056342876, 'C.C', 'María Jóse', 'Hernández', 'Cruz', '25', 'Marajosc@sena.edu.co', 'Marialasano@gmail.com', 'Femenino', 9876549054, 3628933901, 'Villa del camarón', ''),
-(9067895487, 'T.I', 'Camila', 'Ovalle', 'Ruiz', '16', 'CamiOva@sena.edu.co', 'Btsjalobien@yahoo.com', 'Femenino', 8912905643, 3257109286, 'Calle 90 el centro', ''),
-(9078562367, 'C.C', 'Renata', 'López ', 'González ', '23', 'Renago@sena.edu.co', 'lolisjijija@gmail.edu.co', 'Femenino', 7867568945, 3001896745, 'los prados', '');
+INSERT INTO `aprendices` (`Id`, `NumDoc`, `TipoDoc`, `Nombre`, `Apellido1`, `Apellido2`, `Edad`, `EmailInst`, `EmailPer`, `Sexo`, `Telfijo`, `celular`, `Direccion`, `FechaRegis`) VALUES
+(1, 1234556, 'Tarjeta de identidad', 'Sara', 'lopez', 'si', '21', 'si@gmail', 'no@gmail', '56 tipos de gays', 0, 12353, 'belen', '2023-10-16 17:48:40'),
+(2, 1005040452, 'Cedula de ciudadania', 'Gabriel', 'Duarte', 'Arias', '21', 'duartearias2002@gmail.com', 'duartearias2002@gmail.com', '56 tipos de gays', 0, 573025965432, 'aereoupuadba', '2023-10-16 00:28:16'),
+(3, 1289564589, 'T.I', 'Valentina', 'hadha', 'asdsa', '22', 'dasdhnasd@sdada.asdas', 'ahdhad@sasa.adasd', '56 tipos de gays', 3878895634, 312343, 'dadad', '2023-11-04 22:40:36'),
+(4, 1456785689, 'C.C', 'Emiliano', 'Rodríguez ', 'García', '27', 'Emigar@sena.edu.co', 'Lensoigo@gmail.com', 'Masculino', 8967458967, 3567890562, 'El gramalote', ''),
+(5, 1989765809, 'C.C', 'Pepiyo', 'Lasques ', 'Vijamin', '23', 'VijaminPe@sena.edu.co', 'Lasquespeyo@gmail.com', 'Masculino', 2546789092, 3567765589, 'Calle 8 av 7 Barrio Buena ventura', ''),
+(6, 6789563489, 'C.E', 'Diego', 'Sánchez', 'Ramírez', '20', 'diegosan@sena.edu.co', 'jakomeli@gmail.com', 'Masculino', 6789563412, 3889563412, 'Calle 9 Av4 Cuatro de mayo', ''),
+(7, 7655828921, 'C.C', 'Santiago', 'Hernández', 'Tomar', '21', 'santiaher@sena.edu.co', 'Hersantiar@gmail.com', 'Masculino', 3456893467, 4589562367, 'Cruces del tamarindo Calle 8', ''),
+(8, 7889672433, 'C.C', 'Regina', 'García', 'Pérez', '20', 'Reggar@sena.edu.co', 'lapapota@gmail.com', 'Femenino', 6789452389, 3990783476, 'Los patios', ''),
+(9, 8967567890, 'C.C', 'Leonardo', 'Ramírez', 'Cruz', '25', 'LeoRam@sena.edu.co', 'lolcnireloyu@gmail.com', 'Masculino', 7890567845, 3789674512, 'Sanata ana Los patios', ''),
+(10, 9056342876, 'C.C', 'María Jóse', 'Hernández', 'Cruz', '25', 'Marajosc@sena.edu.co', 'Marialasano@gmail.com', 'Femenino', 9876549054, 3628933901, 'Villa del camarón', ''),
+(11, 9067895487, 'T.I', 'Camila', 'Ovalle', 'Ruiz', '16', 'CamiOva@sena.edu.co', 'Btsjalobien@yahoo.com', 'Femenino', 8912905643, 3257109286, 'Calle 90 el centro', ''),
+(12, 9078562367, 'C.C', 'Renata', 'López ', 'González ', '23', 'Renago@sena.edu.co', 'lolisjijija@gmail.edu.co', 'Femenino', 7867568945, 3001896745, 'los prados', '');
 
 -- --------------------------------------------------------
 
@@ -156,7 +158,8 @@ ALTER TABLE `apreficha`
 -- Indices de la tabla `aprendices`
 --
 ALTER TABLE `aprendices`
-  ADD PRIMARY KEY (`NumDoc`);
+  ADD PRIMARY KEY (`Id`),
+  ADD KEY `NumDoc` (`NumDoc`);
 
 --
 -- Indices de la tabla `fichas`
@@ -170,6 +173,16 @@ ALTER TABLE `fichas`
 --
 ALTER TABLE `programas`
   ADD PRIMARY KEY (`Codprograma`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `aprendices`
+--
+ALTER TABLE `aprendices`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Restricciones para tablas volcadas

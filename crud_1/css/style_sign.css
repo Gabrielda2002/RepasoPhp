@@ -1,3 +1,82 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
 body{
+    max-width: 1440px;
+    max-height: 1440px;
+}
+
+
+.form-container{
+    width: 450px;
+    margin: 0 auto;
+    border: 1px solid black;
+    height: fit-content;
     background: black;
+}
+.padre{
+    width: 400px;
+    height: fit-content;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+}
+#imput-container, #doctype-container{
+    background: black;
+    position: relative;
+    width: 100%;
+    height: 50px;
+}
+#imput, #select{
+    width: 100%;
+    height: 50px;
+    border-radius: 3px;
+    border: 1px solid rgb(48, 45, 45);
+    background: black;
+    padding: 10px;
+    color: white;
+    transition: .1s;
+    position: absolute;
+}
+#imput:focus{
+    border: 1px rgb(0, 136, 255) solid;
+    outline: none;
+}
+#select:focus{
+    border: 1px rgb(0, 136, 255) solid;
+    outline: none;
+}
+#imput:focus::placeholder{
+    color: rgb(0, 136, 255);
+}
+p{
+    width: 100%;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+}
+h3{
+    width: 100%;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 30px 0;
+}
+.submit{
+    width: 100%;
+    /* top: 60px; */
+    padding: 7px 0;
+    border-radius: 20px;
+    transition: .3s;
+    font-weight: 700;
+}
+.submit:focus{
+    display: none;
+}
+.submit:hover{
+    opacity: .9;
 }

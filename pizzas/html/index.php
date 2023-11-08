@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <form action="" method="post">
+    <form action="" method="post" class="form-container">
         <div class="padre">
             <div class="hijo5">
                 <h2>
@@ -14,9 +14,11 @@
                 </h2>
             </div>
         <div class="hijo1">
-                <label for="" id="text1">
-                    Por favor seleccione el tipo de pizza.
-                    <br>
+            <p id="text">
+            Por favor seleccione el tipo de pizza.
+            </p>
+                <label for="" id="">
+                
                     <select name="typePizza" id="Tpizza" required>
                         <option value="seleccione">seleccione</option>
                         <option value="Vegetariana">Vegetariana</option>
@@ -25,9 +27,11 @@
                 </label>
                 
                 <br>
+                <p id="text">
+                Tamaño
+                </p>
                 <label for="">
-                    Tamaño
-                    <br>
+                    
                     <select name="tamaño" id="tamaño">
                         <option value="seleccionar">Seleccionar</option>
                         <option value="pequeña">6 porciones</option>
@@ -40,38 +44,45 @@
             <p id="text">
                 Ingredientes vegetariana
             </p>
-            <label for="" id="check">
-                    <input type="checkbox" name="ingredientes[]" value="piña" class="check" requiered>Piña
+            <label for="" id="container">
+                    <input type="checkbox" checked="checked" name="ingredientes[]" value="piña" id="check" requiered>Piña
+                    
             </label>
             <br>
-            <label for="" id="check">
-                <input type="checkbox" name="ingredientes[]" value="pimientos" class="check" requiered>Pimientos
+            <label for="" id="container">
+                <input type="checkbox" checked="checked" name="ingredientes[]" value="pimientos" id="check" requiered>Pimientos
+                
             </label>
             <br>
-            <label for="" id="check">
-                <input type="checkbox" name="ingredientes[]" value="aceitunas" class="check" requiered>Aceitunas
+            <label for="" id="container">
+                <input type="checkbox" checked="checked" name="ingredientes[]" value="aceitunas" id="check" requiered>Aceitunas
+                
             </label>
         </div>
         <div class="hijo3">
             <p id="text">
                 Ingredientes No vegetariana
             </p>
-            <label for="" id="check">
-                <input type="checkbox" name="ingredientes[]" value="jamon" class="check" requiered>Jamon
+            <label for="" id="container">
+                <input type="checkbox" checked="checked" name="ingredientes[]" value="jamon" id="check" requiered>Jamon
+                
             </label>
             <br>
-            <label for="" id="check">
-                <input type="checkbox" name="ingredientes[]" value="peperoni" class="check" requiered>Peperoni
+            <label for="" id="container">
+                <input type="checkbox" checked="checked" name="ingredientes[]" value="peperoni" id="check" requiered>Peperoni
+                
             </label>
             <br>
-            <label for="" id="check">
-                <input type="checkbox" name="ingredientes[]" value="tocineta" class="check" requiered>Tocineta
+            <label for="" id="container">
+                <input type="checkbox" checked="checked" name="ingredientes[]" value="tocineta" id="check" requiered>Tocineta
+                
             </label>
         </div>
 
         <div class="hijo4">
             <input type="submit" value="Calcular" class="boton">
-            <a href="index.php">Reset</a>
+            
+            <a href="index.php" class="reset">Reset</a>
         </div>
         <div class="hijo6">
             <?php

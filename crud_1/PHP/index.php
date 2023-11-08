@@ -18,43 +18,30 @@
         </span>
     </button>
     <script>
-        document.getElementByClassName("singButtom").onclick = function(){
+        document.getElementById("boton").onclick = function(){
             window.location.href = "../html/index.php";
         }
     </script>
-    <button id="boton" class="listButtom">
+    <button id="boton2" class="listButtom">
         <span>
         Listar
         </span>
     </button>
     <script>
-        document.getElementByClassName("listButtom").onclick = function(){
+        document.getElementById("boton2").onclick = function(){
             window.location.href = "vistas/inicio.php";
         }
     </script>
-    <button id="boton" class="queryButtom">
+    <button id="boton3" class="queryButtom">
         <span>
         consultar por ficha
         </span>
     </button>
     <script>
-        document.getElementByClassName("queryButtom").onclick = function(){
+        document.getElementById("boton3").onclick = function(){
             window.location.href = "vistas/consultaFicha.php";
         }
     </script>
-    
-        <ul>
-            <LI id="Navegacion">
-                <a href="../html/index.php">Registrar</a>
-            </LI>
-            <li id="Navegacion">
-                <a href="vistas/inicio.php">Listar</a>
-            </li>
-            <li id="Navegacion">
-                <a href="vistas/consultaFicha.php">Cosulta por ficha</a>
-            </li>
-        </ul>
-        
     </nav>
     <?php
         $enrutador = new Enrutador();
